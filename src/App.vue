@@ -1,6 +1,14 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: fmy1993
+ * @Date: 2021-08-26 20:25:57
+ * @LastEditors: fmy1993
+ * @LastEditTime: 2021-08-26 22:34:58
+-->
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <HelloWorld/>
   </div>
 </template>
