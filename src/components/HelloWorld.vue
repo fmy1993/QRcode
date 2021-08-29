@@ -59,13 +59,29 @@
 </template>
 
 <script>
+// axios已经在main.js中引入
+import GLOBAL from "@/api/global_variable.js";
 export default {
   name: "HelloWorld",
   data() {
     return {
+      //变量名，变量名的值
       msg: "Welcome to Your Vue.js App",
     };
   },
+  created() {
+    // data 和 methods 都已经被初始化好了。（如果要调用 methods 中的方法，或者操作 data 中的数据，最早可以在这个阶段中操作
+    
+    //根据二维码请求的参数获取请求的id，之后直接再发一次ajax请求
+    this.axios.get(GLOBAL.baseURL + "getBlockInfo").then((body) => {
+      this.channelblockinfo = body.data.data.currentblockinfo;
+      this.channelblockheight = body.data.data.blockheight;
+    }
+    );
+  },methods:{
+
+  }
+  
 };
 </script>
 
@@ -133,6 +149,7 @@ span.titlename{
 }
 img{
   vertical-align: middle;
+  /* vertical-align: text-bottom; */
 }
 
 p {
